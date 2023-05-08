@@ -36,8 +36,16 @@
       <button type="submit">Agregar</button>
     </section>
     <section id="sec-messages">
-      <!--Seccion para mensajes CONSULTA AL PROFE-->
-      <input type="hidden" id="success-message" value="Pelicula agregada con exito">
+      <!--Seccion para mensajes-->
+      <div id="success-message">
+        Pelicula agregada con éxito
+      </div>
+      <div id="error-message">
+        Error: La Película seleccionada no se encuentra en la API o se produjo un error al consultar
+      </div>
+      <div id="duplicate-message">
+        La Película ingresada ya se encuentra almacenada
+      </div>
     </section>
     <section id="sec_peliculas">
       <!--Seccion visualizacion de peliculas-->
