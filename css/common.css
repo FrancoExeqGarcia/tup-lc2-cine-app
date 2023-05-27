@@ -4,6 +4,7 @@
   padding: 0;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande","Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
 }
+
 :root {
   /* Declaro variables CSS con colores principales */
   --color-theme: #FFCE30;
@@ -66,7 +67,7 @@ nav li.current-page a {
 main {
   margin-top: 120px;
   overflow: auto;
-  padding: 16px;
+  padding: 0px;
   padding-bottom: 60px;
   height: calc(100% - 120px);
   width: 100%;
@@ -113,8 +114,8 @@ main p {
 /* Media Query: Estilos a aplicar sólo en pantallas mayores a 400px */
 @media (min-width: 400px) {
   main {
-    padding-left: 10%;
-    padding-right: 10%;
+    /*padding-left: 5%;
+    padding-right: 5%;*/
   }
   footer {
     padding-top: 20px;

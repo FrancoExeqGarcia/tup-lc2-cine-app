@@ -7,13 +7,14 @@
   <title>TUP LC2 - TP Integrador - Cine</title>
   <!-- Estilos CSS -->
   <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/pages/index.css">
 </head>
 
 <body>
   <header>
     <h1>
       <!--Titulo Cabecera-->
-      <span>Cartelera de Cine</span>
+      <img src="img/IconoCine.png" alt="pochoclito con gafas"><span>Cartelera de Cine</span>
     </h1>
     <nav>
       <!--Menu Superior-->
@@ -27,7 +28,6 @@
   <!-- Contenido principal de la página -->
   <main>
     <h2>Últimas Películas en Cartelera</h2>
-
     <section id="form-movie-new">
       <!--Seccion para agregar una palicula favorita por codigo-->
       <form>
@@ -47,24 +47,68 @@
         La Película ingresada ya se encuentra almacenada
       </div>
     </section>
-    <section id="sec_peliculas">
+    <section class="seccionPeliculas" id="sec_peliculas">
       <!--Seccion visualizacion de peliculas-->
-      <div class="contenedorPeliculas" id="contenedorPeliculas">
-        <img src="./img/box.jpg" alt="cartelera">
+
+      <div class="seccionPoster">
+        <img class="poster" src="./img/cartelera_mariobros.jpg" alt="cartelera">
+        <h3>Super Mario Bros: La pelicula</h3>
+        <P>Codigo: 502356 <br>
+          Titulo original: The Super Mario Bros. Movie <br>
+          Idioma original: en <br>
+          Año: 2023-04-05 <br>
+          <a class="button" href="">Agregar a favoritos</a>
+        </P>
+      </div>
+
+      <div class="seccionPoster">
+        <img class="poster" src="./img/shazam2.jpg" alt="">
+        <h3>Shazam! La furia de los dioses</h3>
+        <P>Codigo: 594767 <br>
+          Titulo original: Shazam! Fury of the Gods <br>
+          Idioma original: en <br>
+          Año: 2023-03-15 <br>
+          <a class="button" href="">Agregar a favoritos</a>
+        </P>
+      </div>
+
+      <div class="seccionPoster">
+        <img class="poster" src="./img/ninaDeLaComunion.jpg" alt="">
+        <h3>La niña de la comunión</h3>
+        <P>Codigo: 1008005 <br>
+          Titulo original: La niña de la comunión<br>
+          Idioma original: es <br>
+          Año: 2023-02-10 <br>
+          <a class="button" href="">Agregar a favoritos</a>
+        </P>
+      </div>
+
+      <div class="seccionPoster">
+        <img class="poster" src="./img/gatoConBotas.jpg" alt="">
+        <h3>Gato con Botas: El último deseo</h3>
+        <P>Codigo: 315162 <br>
+          Titulo original: Puss in Booths: The Last Wish<br>
+          Idioma original: en <br>
+          Año: 2022-12-07<br>
+          <a class="button" href="">Agregar a favoritos</a>
+        </P>
+      </div>
+      <div class="seccionPoster" id="contenedorPeliculas">
+        <img class="poster" src="./img/box.jpg" alt="cartelera">
         <h3>CREED III</h3>
         <P>Codigo: 677179 <br>
           Titulo original: Creed III <br>
           Idioma original: en <br>
           Año: 2023-03-01 <br>
-          <a href="">Agregar a favoritos</a>
+          <a class="button" href="">Agregar a favoritos</a>
         </P>
       </div>
     </section>
     <section id="sec_paginador_peliculas">
       <!--Seccion de Paginacion-->
       <div class="paginacion" id="paginacion">
-        <button id="btnAnterior">Anterior</button>
-        <button id="btnSiguiente">Siguiente</button>
+        <button class="btnPaginacion" id="btnAnterior">Anterior</button>
+        <button class="btnPaginacion" id="btnSiguiente">Siguiente</button>
       </div>
     </section>
 
