@@ -1,0 +1,37 @@
+
+.seccionAyuda {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+
+.button {
+    background:#15460e;
+    color: white;   
+    display: column;
+    font-size:;
+    position: center;
+    margin: 0px;
+    padding: 10px 0;
+    text-align: center;
+    width: 80px;
+    text-decoration: none;
+    box-shadow:0px 3px 0px #373c3c;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert {
+    background-color: red; 
+    color: white; 
+    padding: 10px 120px; 
+    border: 1px solid #f5c6cb; 
+    border-radius: 5px; 
+  }
+  
+  .alert p {
+    margin: 0; 
+  }
