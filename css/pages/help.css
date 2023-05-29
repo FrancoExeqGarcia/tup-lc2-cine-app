@@ -6,22 +6,22 @@
     margin-right: 70px;
 }
 
+/*BOTONES LIMPIAR Y ENVIAR*/
+button{
+  background:rgb(26, 68, 78);
+  color: white;
+  display: column;
+  font-size: small;
+  margin: 0px;
+  padding: 10px 0;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  text-decoration: none;
+  border-radius: 15px;
+  box-shadow: 0px 2px 0px #484e4e;
 
-.button {
-    background:#15460e;
-    color: white;   
-    display: column;
-    font-size:;
-    position: center;
-    margin: 0px;
-    padding: 10px 0;
-    text-align: center;
-    width: 80px;
-    text-decoration: none;
-    box-shadow:0px 3px 0px #373c3c;
-    border-radius: 15px;
-    justify-content: center;
-    align-items: center;
 }
 
 .alert {
@@ -30,8 +30,15 @@
     padding: 10px 120px; 
     border: 1px solid #f5c6cb; 
     border-radius: 5px; 
+    margin: 20px 15px;
   }
   
   .alert p {
     margin: 0; 
+  }
+  main p{
+    font-size: 18px;
+  }
+  button:hover{
+    box-shadow: 0px 2px 0px;
   }

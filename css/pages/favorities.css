@@ -1,6 +1,4 @@
-* {
-    font-family: 'Montserrat', sans-serif;
-}
+
 
 h3 {
     text-align: center;
@@ -29,32 +27,46 @@ h3 {
 }
 
 p {
-    color: grey;
+    color: rgb(15, 80, 141);;
     justify-content: center;
 }
-
+.seccion-alerta{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;   
+}
 .seccion-alerta .peliculaAgregada {
+    
+    width: 50%;
     background-color: #28a745;
-    color: white;
-    padding: 10px 120px;
-    border: 1px solid #28a745;
     border-radius: 5px;
+    margin: 10px 10px;
+    padding: 5px;
 }
 
 .seccion-alerta .peliculaExistente {
-
+    
+    width: 50%;
     background-color: #ffc107;
-    color: white;
-    padding: 10px 120px;
     border: 1px solid #ffc107;
     border-radius: 5px;
+    margin: 10px 10px;
+    padding: 5px;
 }
 
 .seccion-alerta .peliculaInexistente {
-
+    
+    width: 50%;
     background-color: #dc3545;
-    color: white;
-    padding: 10px 120px;
     border: 1px solid #dc3545;
     border-radius: 5px;
+    margin: 10px 10px;
+    padding: 5px;
+}
+
+.seccion-alerta p{
+    color: white;
 }

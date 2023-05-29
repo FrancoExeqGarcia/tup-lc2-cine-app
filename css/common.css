@@ -2,9 +2,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
-}
-
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande","Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
+  }
 :root {
   /* Declaro variables CSS con colores principales */
   --color-theme: #FFCE30;
@@ -20,6 +19,7 @@
   );
 }
 body {
+  background-color: #e0e0e0;
   height: 100%;
   width: 100%;
 }
@@ -80,16 +80,21 @@ h1 {
   text-align: center;
   margin: 0;
   color: var(--color-theme);
+  text-shadow: 2px 2px 5px rgb(88, 87, 87);
 }
 h1 > img {
   width: 70px;
   vertical-align: middle;
   padding: 10px;
+
+  
 }
 h2 {
   color: var(--color-titulos);
   margin: 16px 0;
   text-align: center;
+  text-shadow: 2px 2px 5px gray;
+
 }
 h3 {
   color: var(--color-theme);
@@ -177,4 +182,8 @@ main p {
 }
 .verde{
   background-color:#28a745 ;
+}
+
+footer p {
+  text-align: center;
 }
