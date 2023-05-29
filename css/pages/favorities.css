@@ -2,22 +2,25 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-h3{
+h3 {
     text-align: center;
 }
-.seccionPeliculas .imagenFavorita{
+
+.seccionPeliculas .imagenFavorita {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 50%;
 }
-.imagenFavorita img { 
+
+.imagenFavorita img {
     max-width: 100%;
     max-height: 100%;
     border-radius: 25px;
     padding-bottom: 10px;
 }
+
 .seccionPeliculas {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -25,6 +28,33 @@ h3{
     grid-gap: 20px;
 }
 
-p{
+p {
     color: grey;
+    justify-content: center;
+}
+
+.seccion-alerta .peliculaAgregada {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 120px;
+    border: 1px solid #28a745;
+    border-radius: 5px;
+}
+
+.seccion-alerta .peliculaExistente {
+
+    background-color: #ffc107;
+    color: white;
+    padding: 10px 120px;
+    border: 1px solid #ffc107;
+    border-radius: 5px;
+}
+
+.seccion-alerta .peliculaInexistente {
+
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 120px;
+    border: 1px solid #dc3545;
+    border-radius: 5px;
 }
