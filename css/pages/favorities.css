@@ -19,10 +19,11 @@ h3 {
     padding-bottom: 10px;
 }
 
-.seccionPeliculas {
+.seccionCartelera {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin: 10px 200px;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    /*margin: 10px 200px;*/
     grid-gap: 20px;
 }
 
