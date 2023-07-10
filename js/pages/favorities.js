@@ -2,28 +2,23 @@ const API_KEY = '7065bc28cfacd8886e291178a580ce61';
 
 document.addEventListener('DOMContentLoaded', mostrarPeliculasFavoritas);
 
-// Función para mostrar las películas favoritas
 async function mostrarPeliculasFavoritas() {
   const favoritesList = document.getElementById('favorites-list');
   const template = document.getElementById('contenedorPeliculasFavoritas');
   const mensajeNoHayPeliculas = document.getElementById('mensaje-no-hay-peliculas');
-  // Obtener las películas favoritas almacenadas en localStorage
   let favoritos = localStorage.getItem('Favoritos');
-  if (!favoritos || favoritos.length === 2) { // Cambia la condición a "favoritos.length === 2"
-    mensajeNoHayPeliculas.style.display = 'block'; // Mostrar mensaje
+  if (!favoritos || favoritos.length === 2) { 
+    mensajeNoHayPeliculas.style.display = 'block'; 
     return;
   }
 
   favoritos = JSON.parse(favoritos);
   mensajeNoHayPeliculas.style.display = 'none';
-  // favoritesList.innerHTML = ''; // Limpiar la lista de películas favoritas
 
-  // Recorrer las películas favoritas
   for (let i = 0; i < favoritos.length; i++) {
     const codigoPelicula = favoritos[i];
 
     try {
-      // Consultar el detalle de la película desde la API
       const response = await fetch(`https://api.themoviedb.org/3/movie/${codigoPelicula}?api_key=${API_KEY}&language=es-MX`);
       if (!response.ok) {
         throw new Error('Error en la consulta a la API.');
@@ -31,10 +26,8 @@ async function mostrarPeliculasFavoritas() {
 
       const pelicula = await response.json();
 
-      // Crear una copia de la plantilla de tarjeta de película
       const movieCard = template.content.cloneNode(true);
 
-      // Rellenar los datos de la tarjeta de película con la información obtenida
       const contenedorPeliculasFavoritasElement = movieCard.querySelector('.contenedorPeliculasFavoritas');
       contenedorPeliculasFavoritasElement.id = pelicula.id;
       const posterElement = movieCard.querySelector('.poster');
@@ -61,13 +54,11 @@ async function mostrarPeliculasFavoritas() {
       }
     }
 
-      // Agregar el evento click al botón de "Quitar de favoritos"
       removeButton.addEventListener('click', () => {
         quitarPeliculaDeFavoritos(codigoPelicula);
         document.getElementById(codigoPelicula).remove(); 
       });
 
-      // Agregar la tarjeta de película a la lista de favoritos
       favoritesList.appendChild(movieCard);
     } catch (error) {
       mostrarMensajeError('Se produjo un error al cargar la información de las películas.');
@@ -76,7 +67,6 @@ async function mostrarPeliculasFavoritas() {
   }
 }
 
-// Función para quitar una película de la lista de favoritos
 function quitarPeliculaDeFavoritos(codigoPelicula) {
   let favoritos = localStorage.getItem('Favoritos');
   if (!favoritos) {

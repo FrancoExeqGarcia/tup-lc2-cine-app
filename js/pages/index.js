@@ -5,7 +5,7 @@ let totalPages = 1;
 
 function displayMovies(page) {
     const seccionPoster = document.getElementById('seccionCartelera');
-    seccionPoster.innerHTML = ''; // Limpiar el contenido anterior
+    seccionPoster.innerHTML = ''; 
 
     fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&sort_by=popularity.desc&page=${page}`)
         .then(response => response.json())
