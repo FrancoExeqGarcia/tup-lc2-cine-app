@@ -51,6 +51,16 @@ async function mostrarPeliculasFavoritas() {
       idiomaOriginalElement.textContent = pelicula.original_language;
       resumenElement.textContent = pelicula.overview;
 
+      const videoFavorito = await fetch(`https://api.themoviedb.org/3/movie/${pelicula.id}/videos?api_key=${API_KEY}`);
+      if (videoFavorito.ok) {
+        const videosData = await videoFavorito.json();
+        if (videosData.results && videosData.results.length > 0) {
+          const videoKey = videosData.results[0].key;
+          const videoElement = movieCard.querySelector('.video');
+          videoElement.src = `https://www.youtube.com/embed/${videoKey}`;
+      }
+    }
+
       // Agregar el evento click al botón de "Quitar de favoritos"
       removeButton.addEventListener('click', () => {
         quitarPeliculaDeFavoritos(codigoPelicula);
