@@ -8,6 +8,13 @@
   <!-- Estilos CSS -->
   <link rel="stylesheet" href="css/common.css"/>
   <link rel="stylesheet" href="css/pages/help.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+     (function(){
+        emailjs.init("0SmF7FNyG5EQL22kg");
+     })();
+  </script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
   </style>
@@ -47,7 +54,7 @@
     </section>
     <section id="form-cine_contacto">
       <!-- Sección donde se debe colocar el formulario de contacto-->
-      <form>
+      <form id="contact-form">
 
         <label for="nombre">Nombre:</label> <br>
         <input type="text" id="nombre" name="nombre"><br>

@@ -1,5 +1,3 @@
-* {
-}
 p {
     color: grey;
     text-align: left;
@@ -113,3 +111,33 @@ main .peliculaFavorita{
 .button:hover {
     box-shadow: 0px 0px 0px;
 }
+
+#sec-messages #success-message > p {
+    width: 100%;
+    background-color: #28a745;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    color: white; /* Cambiar el color del texto */
+}
+  
+  .seccion-alerta .peliculaExistente {
+    
+    width: 50%;
+    background-color: #ffc107;
+    border: 1px solid #ffc107;
+    border-radius: 5px;
+    margin: 10px 10px;
+    padding: 5px;
+  }
+  
+  .seccion-alerta .peliculaInexistente {
+    
+    width: 50%;
+    background-color: #dc3545;
+    border: 1px solid #dc3545;
+    border-radius: 5px;
+    margin: 10px 10px;
+    padding: 5px;
+  }

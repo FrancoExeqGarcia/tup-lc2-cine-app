@@ -2,6 +2,7 @@ const apiKey = '7065bc28cfacd8886e291178a580ce61';
 let currentPage = 1;
 let totalPages = 1;
 
+
 function displayMovies(page) {
     const seccionPoster = document.getElementById('seccionCartelera');
     seccionPoster.innerHTML = ''; // Limpiar el contenido anterior
@@ -43,10 +44,11 @@ function displayMovies(page) {
             });
         })
         .catch(error => {
+            let msj = document.getElementById("sec-messages");
+            msj.innerHTML = '<p class="rojo">¡Ocurrio un error en la comunicación con la API!</p>';   
             console.error('Error:', error);
         });
 }
-
 
 function updatePagination() {
     const paginacionElement = document.getElementById('paginacion');
@@ -78,35 +80,70 @@ function updatePagination() {
     });
     paginacionElement.appendChild(btnSiguiente);
 }
-function agregarFavorito(id) {
-    let local = [];
-    local = localStorage.getItem("Favoritos");
-    let nuevo = id;
-    let control = true;
-    if (local != null) {
-        for (let i = 0; i < local.length; i++) {
-            if (local[i] == nuevo) {
-                control = false;
-                i = local.length;
-            };
-        };
-        if (control) {
-            let msj = document.getElementById("sec-messages");
-            localStorage.setItem("Favoritos", id);
-            msj.innerHTML = '<p class="verde">Película agregada con éxito!</p>';
-        }
-        else {
-            let msj = document.getElementById("sec-messages");
-            msj.innerHTML = '<p class="amarillo">La película ingresada ya se encuentra almacenada</p>';
-        };
-    }
-    else {
-        let msj = document.getElementById("sec-messages");
-        localStorage.setItem("Favoritos", id);
-        msj.innerHTML = '<p class="verde">Película agregada con éxito!</p>';
-    }
-};
 
+
+function agregarFavorito(codigoPelicula) {
+    let favoritos = localStorage.getItem("Favoritos");
+
+    if (favoritos !== null) {
+        favoritos = JSON.parse(favoritos);
+    }
+
+    if (!Array.isArray(favoritos)) {
+        favoritos = [];
+    }
+
+    let peliculaYaAgregadaAFavoritos = false;
+
+    for (let i = 0; i < favoritos.length; i++) {
+        if (favoritos[i] == codigoPelicula) {
+            peliculaYaAgregadaAFavoritos = true;
+            break;
+        }
+    }
+
+    if (peliculaYaAgregadaAFavoritos) {
+        let msj = document.getElementById("sec-messages");
+        msj.innerHTML = '<p class="amarillo">La película ingresada ya se encuentra almacenada</p>';        
+    } else {
+        favoritos.push(codigoPelicula);
+        localStorage.setItem("Favoritos", JSON.stringify(favoritos));
+        let msj = document.getElementById("sec-messages");
+        msj.innerHTML = '<p class="verde">¡Película agregada con éxito!</p>';      
+    }
+}
+
+const formulario = document.querySelector('.peliculaFavorita');
+const btnAgregar = formulario.querySelector('#btnAgregar');
+const inputCodigo = formulario.querySelector('input[name="nombre-pelicula"]');
+
+btnAgregar.addEventListener('click', function(event) {
+  event.preventDefault();
+  const codigoPelicula = inputCodigo.value.trim();
+
+  if (codigoPelicula !== '') {
+    validarPelicula(codigoPelicula);
+  }
+});
+
+function validarPelicula(codigoPelicula) {
+  fetch(`https://api.themoviedb.org/3/movie/${codigoPelicula}?api_key=${apiKey}`)
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error('La película no existe en la API');
+      }
+    })
+    .then(data => {
+      agregarFavorito(data.id);
+    })
+    .catch(error => {
+      let msj = document.getElementById("sec-messages");
+      msj.innerHTML = '<div id="error-message"><p class="error">Error: ' + error.message + '</p></div>';
+      console.error('Error:', error);
+    });
+}
 
 
 displayMovies(currentPage);

@@ -174,16 +174,37 @@ main p {
   font-weight: 200;
   text-align: center;
 }
-.amarillo{
-  background-color: #ffc107;
-}
 .rojo{
   background-color:#dc3545;
 }
-.verde{
-  background-color:#28a745 ;
+.amarillo {
+  background-color: rgb(182, 182, 95);
+  color: white ;
+  padding: 10px 10px;
+  border: 1px solid #f5c6cb; 
+  border-radius: 10px; 
+  margin: 10px;
+  text-align: center;
+  width: 100%;
+  align-items: center;
 }
 
+.verde {
+  background-color: green;
+  color: white;
+  padding: 10px 10px;
+  border: 1px solid #f5c6cb; 
+  border-radius: 10px; 
+  margin: 10px;
+}
 footer p {
+  text-align: center;
+}
+
+.error {
+  background-color: red;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
   text-align: center;
 }
