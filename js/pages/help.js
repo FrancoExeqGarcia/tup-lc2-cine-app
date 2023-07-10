@@ -18,7 +18,7 @@ function sendEmail(){
         }, function(error) {
            console.log('FAILED...', error);
            let msj = document.getElementById("sec-cine-result");
-           msj.innerHTML ='<p class="rojo"> Hubo un error al enviar el email. Por favor, inténtalo nuevamente más tarde.</p>';
+           msj.innerHTML ='<p class="error"> Hubo un error al enviar el email. Por favor, inténtalo nuevamente más tarde.</p>';
         }
         );
     }
